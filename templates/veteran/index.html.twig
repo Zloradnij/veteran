@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Veteran index{% endblock %}
+
+{% block body %}
+    <h1>Veteran index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First_name</th>
+                <th>Surname</th>
+                <th>Patronymic</th>
+                <th>Date_of_birth</th>
+                <th>Address</th>
+                <th>Phone_home</th>
+                <th>Phone_mobile</th>
+                <th>Email_address</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for veteran in veterans %}
+            <tr>
+                <td>{{ veteran.id }}</td>
+                <td>{{ veteran.firstName }}</td>
+                <td>{{ veteran.surname }}</td>
+                <td>{{ veteran.patronymic }}</td>
+                <td>{{ veteran.dateOfBirth ? veteran.dateOfBirth|date('Y-m-d') : '' }}</td>
+                <td>{{ veteran.address }}</td>
+                <td>{{ veteran.phoneHome }}</td>
+                <td>{{ veteran.phoneMobile }}</td>
+                <td>{{ veteran.emailAddress }}</td>
+                <td>
+                    <a href="{{ path('veteran_show', {'id': veteran.id}) }}">show</a>
+                    <a href="{{ path('veteran_edit', {'id': veteran.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('veteran_new') }}">Create new</a>
+{% endblock %}
