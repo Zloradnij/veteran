@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\Veteran;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,11 +17,11 @@ class VeteranType extends AbstractType
             ->add('first_name', null, ['label' => 'Имя'])
             ->add('surname', null, ['label' => 'Фамилия'])
             ->add('patronymic', null, ['label' => 'Отчество'])
-            ->add('date_of_birth', DateType::class, ['label' => 'Дата рождения'])
+            ->add('date_of_birth', BirthdayType::class, ['label' => 'Дата рождения'])
             ->add('address', null, ['label' => 'Адрес'])
             ->add('phone_home', null, ['label' => 'Домашний телефон'])
             ->add('phone_mobile', null, ['label' => 'Мобильный телефон'])
-            ->add('email_address', null, ['label' => 'Email'])
+            ->add('email_address', EmailType::class, ['label' => 'Email'])
         ;
     }
 
