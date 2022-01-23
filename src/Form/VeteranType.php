@@ -12,10 +12,10 @@ class VeteranType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('first_name', 'string', ['label' => 'Имя'])
+            ->add('first_name', null, ['label' => 'Имя'])
             ->add('surname', null, ['label' => 'Фамилия'])
             ->add('patronymic', null, ['label' => 'Отчество'])
-            ->add('date_of_birth', null, ['label' => 'Дата рождения'])
+            ->add('date_of_birth', DateType::class, ['label' => 'Дата рождения'])
             ->add('address', null, ['label' => 'Адрес'])
             ->add('phone_home', null, ['label' => 'Домашний телефон'])
             ->add('phone_mobile', null, ['label' => 'Мобильный телефон'])
