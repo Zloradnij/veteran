@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Veteran index{% endblock %}
+{% block title %}Список ветеранов{% endblock %}
 
 {% block body %}
-    <h1>Veteran index</h1>
+    <h1>Список ветеранов</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>First_name</th>
-                <th>Surname</th>
-                <th>Patronymic</th>
-                <th>Date_of_birth</th>
-                <th>Address</th>
-                <th>Phone_home</th>
-                <th>Phone_mobile</th>
-                <th>Email_address</th>
-                <th>actions</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Отчество</th>
+                <th>Дата рождения</th>
+                <th>Адрес</th>
+                <th>Домашний телефон</th>
+                <th>Мобильный телефон</th>
+                <th>Email</th>
+                <th>действия</th>
             </tr>
         </thead>
         <tbody>
@@ -45,5 +45,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('veteran_new') }}">Create new</a>
+    <a class="btn" href="{{ path('veteran_new') }}">Добавить ветерана</a>
 {% endblock %}

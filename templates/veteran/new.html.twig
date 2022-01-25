@@ -1,11 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Veteran{% endblock %}
+{% block title %}Новый ветеран{% endblock %}
 
 {% block body %}
-    <h1>Create new Veteran</h1>
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="my-5">
+                <h1>Новый ветеран</h1>
 
-    {{ include('veteran/_form.html.twig') }}
+                <a class="back-to-list" href="{{ path('veteran_index') }}"><= Назад к списку</a>
 
-    <a href="{{ path('veteran_index') }}">back to list</a>
+                {{ include('veteran/_form.html.twig') }}
+
+                <a class="back-to-list" href="{{ path('veteran_index') }}"><= Назад к списку</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
